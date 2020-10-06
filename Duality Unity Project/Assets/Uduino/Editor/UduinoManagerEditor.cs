@@ -540,7 +540,7 @@ namespace Uduino
 
             } catch(Exception e)
             {
-                Log.Debug("Impossible to load the Logo");
+                Log.Debug($"Impossible to load the Logo: {e}");
             }
             GUILayout.Space(0);
 
