@@ -18,6 +18,7 @@ public class DefaultScript : ArduinoBehaviour
         {
             yield return delay(10f);
         }
+        yield return null;
     }
 }
 #endif

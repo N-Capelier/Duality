@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Uduino;
 using UnityEngine;
 
 public static class Team
@@ -43,7 +44,8 @@ public static class Team
 
     public static int UpdateHP()
     {
-
+        //Arduino part
+        //UduinoManager.Instance.digitalWrite()
         return HP;
     }
 
