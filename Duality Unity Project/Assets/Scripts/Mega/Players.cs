@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Players : ArduinoBehaviour
 {
+    public bool[] shooting = new bool[10];
+
     void Start()
     {
         StartCoroutine(Loop());
@@ -13,14 +15,19 @@ public class Players : ArduinoBehaviour
     {
         while(Arduino.isRunning)
         {
-            //Check player inputs;
-
-            yield return delay(0.1f);
+            for(int i = 0; i < 10; i++)
+            {
+                if(Game.Instance.players[i] && shooting[i])
+                {
+                    shooting[i] = false;
+                    Shoot(i);
+                }
+            }
         }
         yield return null;
     }
 
-    void Shoot(int index)
+    public void Shoot(int index)
     {
         for(int i = 0; i < Game.enemiesY; i++)
         {

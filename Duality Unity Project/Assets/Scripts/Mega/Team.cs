@@ -45,7 +45,7 @@ public static class Team
     public static int UpdateHP()
     {
         //Arduino part
-        //UduinoManager.Instance.digitalWrite()
+        UduinoManager.Instance.sendCommand("SetHP", HP);
         return HP;
     }
 

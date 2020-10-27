@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Uduino;
 using UnityEngine;
 
 public class Game : ArduinoBehaviour
@@ -138,11 +139,11 @@ public class Game : ArduinoBehaviour
             {
                 if(enemies[i,j])
                 {
-                    //Power on pin
+                    UduinoManager.Instance.sendCommand("SetStrip", i, j, 255, 0, 0, 255);
                 }
                 else
                 {
-                    //Power off pin
+                    UduinoManager.Instance.sendCommand("SetStrip", i, j, 0, 0, 0, 0);
                 }
             }
         }
